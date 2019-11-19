@@ -77,6 +77,7 @@ print('Output history ID: ' + output_history_id)
 
 while gi.histories.get_status(output_history_id)['percent_complete'] != 100:
     time.sleep(1)
+    print(gi.histories.get_status(output_history_id)['state_details'])
     if gi.histories.get_status(output_history_id)['state_details']['error'] != 0:
         print('One of the steps in the workflow is giving an ERROR')
         break
